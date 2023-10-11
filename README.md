@@ -54,28 +54,29 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```php
 <?php
+
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-
+$token = 'INSERT_YOUR_TOKEN_HERE';
+$instanceUrl = 'INSERT_YOUR_INSTANCE URL HERE'; // for ex: https://api.1msg.io/123123123/';
 // Configure API key authorization: token
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('token', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('token', $token)->setHost($instanceUrl);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('token', 'Bearer');
 
 
 $apiInstance = new OpenAPI\Client\Api\ChannelApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+// If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+// This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
 try {
-    $result = $apiInstance->getCommerce();
+    $result = $apiInstance->getMe();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ChannelApi->getCommerce: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ChannelApi->getMe: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
