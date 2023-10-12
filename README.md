@@ -21,7 +21,7 @@ Should also work with PHP 8.0.
 
 ### Composer
 
-To install the bindings via [Composer](https://getcomposer.org/) run `composer require 1msg/one_msg_waba_sdk`
+To install the bindings via [Composer](https://getcomposer.org/) run `composer require 1msg/one_msg_waba_sdk:dev-main`
 
 ### Manual Installation
 
